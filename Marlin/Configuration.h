@@ -1170,14 +1170,14 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 99.5 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 200, 200, 5, 25 }
+#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1207,9 +1207,9 @@
  *   M204 I    Angular Acceleration
  *   M204 J    Angular Travel Acceleration
  */
-#define DEFAULT_ACCELERATION                   500  // X, Y, Z ... and E acceleration for printing moves
+#define DEFAULT_ACCELERATION                  3000  // X, Y, Z ... and E acceleration for printing moves
 #define DEFAULT_RETRACT_ACCELERATION           500  // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION            500  // X, Y, Z ... acceleration for travel (non printing) moves
+#define DEFAULT_TRAVEL_ACCELERATION           3000  // X, Y, Z ... acceleration for travel (non printing) moves
 #if ENABLED(AXIS4_ROTATES)
   #define DEFAULT_ANGULAR_ACCELERATION        3000  // I, J, K acceleration for rotational-only printing moves
   #define DEFAULT_ANGULAR_TRAVEL_ACCELERATION 3000  // I, J, K acceleration for rotational-only travel (non printing) moves
@@ -1491,7 +1491,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -40, -10, -1.85 }
+#define NOZZLE_TO_PROBE_OFFSET { -40, -10, -2.7 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1890,8 +1890,8 @@
  * these options to restore the prior leveling state or to always enable
  * leveling immediately after G28.
  */
-#define RESTORE_LEVELING_AFTER_G28
-// Do we still need this? TODO
+//#define RESTORE_LEVELING_AFTER_G28
+// https://community.octoprint.org/t/whats-the-difference-between-these-two-marlin-defines/40835
 #define ENABLE_LEVELING_AFTER_G28
 
 /**
